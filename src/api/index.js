@@ -25,6 +25,9 @@ export const reqDeleteImg=(name)=>ajax('/manage/img/delete',{name},'POST')
 export const reqRoles=()=>ajax('/manage/role/list')
 //添加角色
 export const reqAddRole=(roleName)=>ajax('/manage/role/add',{roleName},"POST")
+//更新角色权限
+export const reqUpdateRole=(_id,menus,auth_time,auth_name)=>ajax('/manage/role/update',{_id,menus,auth_time,auth_name},'POST')
+
 //搜索商品分页列表
 export const reqSearchProducts=({pageNum,pageSize,searchName,searchType})=>ajax(BASE + '/manage/product/search',{
     pageNum,

@@ -1,21 +1,31 @@
-var allPathsSourceTarget = function(graph) {
-    const stack = [], ans = [];
+var maxValue = function(grid) {
+    var m=grid.length-1
+    var n=grid[0].length-1
+    var i=j=0
+    var ans=grid[0][0]
+    while(i!=m||j!=n){
+        if(i==m&&j!=n){
+            j++
+            ans+=grid[i][j]
+        }
 
-    const dfs = (graph, x, n) => {
-        if (x === n) {
-            ans.push(stack.slice());
-            return;
+        if(i!=m&&j==n){
+            i++
+            ans+=grid[i][j]
         }
-        for (const y of graph[x]) {
-            stack.push(y);
-            dfs(graph, y, n);
-            stack.pop();
+        if(i!=m&&j!=n){
+            if(grid[i+1][j]>grid[i][j+1]){
+                i++
+                ans+=grid[i][j]
+            }else{
+                j++
+                ans+=grid[i][j]
+            }
         }
+
     }
-
-    stack.push(0);
-    dfs(graph, 0, graph.length - 1);
-    return ans;
+   
+    
+    return ans
 };
-allPathsSourceTarget([[1,2],[3],[3],[]])
-
+maxValue([[1,2,5],[3,2,1]])
