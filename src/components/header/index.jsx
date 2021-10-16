@@ -94,7 +94,7 @@ class Header extends Component {
                 <div className='header-bottom'>
                     <div className='header-bottom-left'>{title}</div>
                     <div className='header-bottom-right'>
-                        <span> <Select defaultValue="gz" onChange={this.getWeather}>
+                        <span className='header-bottom-right-weather'> <Select  defaultValue="gz" onChange={this.getWeather}>
                             <Option value="gz">广州</Option>
                             <Option value="sz">深圳</Option>
                             <Option value="sh">上海</Option>               

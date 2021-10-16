@@ -35,6 +35,13 @@ export const reqSearchProducts=({pageNum,pageSize,searchName,searchType})=>ajax(
     [searchType]:searchName
 })
 export const reqAddUpdateProduct=(product)=>ajax('/manage/product/'+(product._id?'update':'add'),product,'POST')
+
+//获取用户列表
+export const reqUsers=()=>ajax('/manage/user/list')
+//删除用户Us
+export const reqDeleteUser=(userId)=>ajax('/manage/user/delete',{userId},'POST')
+
+export const reqAddUpdateUser=(user)=>ajax('/manage/user/'+(user._id?'update':'add'),user,'POST')
 //export const reqAUpdateProduct=(product)=>ajax('/manage/product/update',product,'POST')
 //jsonp
 export const reqWeather=(code)=>{
